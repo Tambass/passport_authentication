@@ -88,8 +88,6 @@ router.post("/register", (req, res) => {
   }
 });
 
-module.exports = router;
-
 // Login Handle
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
@@ -98,3 +96,12 @@ router.post("/login", (req, res, next) => {
     failureFlash: true,
   })(req, res, next);
 });
+
+// Logout Handle
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.flash("success_msg", "Vous êtes déconnecté");
+  res.redirect("/users/login");
+});
+
+module.exports = router;
