@@ -77,7 +77,7 @@ router.post("/register", (req, res) => {
                   "success_msg",
                   "Vous êtes maintenant enregistré et pouvez vous connecter"
                 );
-                res.redirect("/login");
+                res.redirect("/users/login");
               })
               .catch(err, console.log(err));
           })
@@ -88,5 +88,7 @@ router.post("/register", (req, res) => {
 });
 
 module.exports = router;
+
+
 
 // reprendre la video à 51:32 https://www.youtube.com/watch?v=6FOq4cUdH8k&list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu&index=3&t=0s
